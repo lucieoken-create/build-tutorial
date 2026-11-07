@@ -37,7 +37,7 @@ If a record for this build already exists, read its sources and changelog and sw
 3. **Work out which tool did what.** People often switch between AI coding tools mid-build. Clues: commit trailers (Claude Code adds a Co-Authored-By line naming Claude by default), author names, branch names, and instruction files like CLAUDE.md or AGENTS.md and when they appeared. Lay the timeline out in stretches by tool. Why they switched is part of the story.
 4. **Find the turning points.** Look for commits with large deletions, reverts, renamed or removed files, dependencies added then dropped, messages with fix, try, revert, again or wip, and clusters of commits on one file in one day. Those are usually the "tried something, it didn't work" moments. Pull the diffs with `git show` and keep the before and after of the files that matter.
 5. **Read the session transcripts.** Claude Code saves sessions as JSONL under `~/.claude/projects/`, in folders named after the path the repo was in. Codex CLI saves sessions under `~/.codex/sessions/`, in dated folders. Match sessions to the build by repo name and dates, not just the current path, since folders get moved. These hold the builder's prompts, what the tool tried, the errors and the fixes, which is where most of the story is when commits are sparse. Search for errors, corrections ("no", "instead", "that's not it", "try") and pasted screenshots. If some work ran in a cloud or desktop app and left nothing on disk, say so and ask the builder to export or screenshot it.
-6. **Find old visuals.** Hosts like Vercel and Netlify keep a deployment per push, so earlier versions may still be live at preview URLs. For small static projects, checking out an old commit and screenshotting it locally works. For anything needing a database, a CMS or secret keys, don't burn time on it; ask what the builder saved.
+6. **Find old visuals.** Hosts like Vercel and Netlify keep a deployment per push, so earlier versions may still be live at preview URLs. For small static projects, reconstruct an old state yourself: check out the commit into a throwaway `git worktree`, serve the built folder, and screenshot it. For mobile shots, drive a headless browser that does real device emulation — Puppeteer or Playwright, or the DevTools protocol; plain `chrome --headless --window-size=375,812` renders the desktop layout cropped to the width, so the responsive breakpoints never fire. Save the images as files (doc connectors often can't take image uploads). For anything needing a database, a CMS or secret keys, don't burn time on it; ask what the builder saved.
 7. **Scrub as you go.** Transcripts and old commits can hold API keys, tokens, passwords, client names and personal data. None of it goes into the record, a screenshot or a code image.
 
 ## Step 2. Sweep (chat mode)
@@ -65,6 +65,8 @@ Before writing anything long, lay out the turning points as a short log. For eac
 10. **Sources swept** and a **changelog.**
 
 Write in the builder's voice, using their writing-style skill or samples if they gave them. Plain words, specific details, no hype. Don't make the build sound easier or smoother than the evidence shows. Every claim traces to a source or to the builder.
+
+If you're filing the record into a doc tool that can only create, not edit in place (some connectors work this way), settle the text first — the voice pass included — and create the doc once. Keep the Markdown working copy as the living draft rather than re-making the doc on every change.
 
 ## Step 5. Write it up on request
 
