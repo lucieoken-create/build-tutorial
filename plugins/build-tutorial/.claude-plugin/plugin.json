@@ -1,0 +1,6 @@
+{
+  "name": "build-tutorial",
+  "description": "Turn something you built with AI into a tutorial",
+  "author": { "name": "Lucie Oken", "url": "https://hijinx.studio" },
+  "license": "MIT"
+}

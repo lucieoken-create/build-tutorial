@@ -1,0 +1,12 @@
+{
+  "name": "build-tutorial",
+  "description": "Turn something you built with AI into a tutorial",
+  "owner": { "name": "Lucie Oken" },
+  "plugins": [
+    {
+      "name": "build-tutorial",
+      "source": "./plugins/build-tutorial",
+      "description": "Turns a repo or a run of AI chats into a tutorial record, then a workshop, post or README section"
+    }
+  ]
+}
