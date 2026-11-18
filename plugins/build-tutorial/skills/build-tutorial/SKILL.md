@@ -21,12 +21,13 @@ Ask the builder three things once, and remember the answers for later runs if yo
 
 ## Step 1. Set up
 
-Settle four things, asking only what you can't work out yourself:
+Settle five things, asking only what you can't work out yourself:
 
 1. Which build, and where it lives (a repo, or the chats and folders for a chat-based build).
 2. Which mode. **Repo mode** is for code builds and works best in Claude Code on the computer where the build happened, since that's where the session transcripts are. **Chat mode** is for work done in claude.ai conversations, like social graphics or a deck.
 3. Who it's for: a workshop or training, a post, or both. The record is the same; the write-ups differ.
 4. Whether it can be public. Work done for a client or an employer usually can't.
+5. Questions it answers. Ask whether the builder keeps any record of what people have asked them: workshop Q&A, comments, replies, DMs, a notes page. If they do, find the questions this build answers. Real questions are the best guide to what a tutorial should cover, and a post that opens on one lands faster than one that opens on the build. If there's no such list, skip this.
 
 If a record for this build already exists, read its sources and changelog and sweep only what's new.
 
@@ -53,7 +54,7 @@ Before writing anything long, lay out the turning points as a short log. For eac
 
 ## Step 4. Write the record
 
-1. **Header.** Project, dates, links (live site, repo, license), audience, public or private.
+1. **Header.** Project, dates, links (live site, repo, license), audience, public or private, and the audience questions it answers, if any.
 2. **The problem.** What they wanted and why it mattered, in plain terms.
 3. **Tools and starting point.** The stack, which AI tools built which parts, and an honest note on where it started, crediting any tutorial, template or open-source asset it built on, with its license.
 4. **What they tried.** The iteration log in order, with before-and-after pairs. Include what got thrown away.
@@ -72,8 +73,8 @@ If you're filing the record into a doc tool that can only create, not edit in pl
 
 Confirm the format and where it's going each time.
 
-- **Workshop or training.** The story in a few slides, one live demo moment, an exercise (usually the start-small version), and a link people can fork. A talk track in full sentences.
-- **Blog or newsletter post.** Story first, two or three images that carry the before and after, and a start-small box near the end.
+- **Workshop or training.** The story in a few slides, one live demo moment, an exercise (usually the start-small version), and a link people can fork. A talk track in full sentences. Use the record's audience questions for the Q&A.
+- **Blog or newsletter post.** Story first, two or three images that carry the before and after, and a start-small box near the end. If the record lists audience questions, the post can open on one.
 - **README section.** A "Make it yours" section for a public repo, with a prompt people can paste.
 - **Code images.** Before-and-after snippets as clean images (an HTML page screenshotted headlessly works), trimmed to the lines that changed, in the builder's brand colors and type if they have them.
 
@@ -85,7 +86,7 @@ Tell the builder in two or three lines what the tutorial covers, what's missing,
 
 ## For future builds: capture as you go
 
-When the builder starts something new, offer a light habit so the next tutorial writes itself: commit at each real milestone with one sentence on what changed and why, keep a short `build-log.md` for tries that didn't make it into a commit, and save a screenshot when something visual lands. Suggest it once per build.
+When the builder starts something new, offer a light habit so the next tutorial writes itself: commit at each real milestone with one sentence on what changed and why, keep a short `build-log.md` for tries that didn't make it into a commit, and save a screenshot when something visual lands. When people ask about the build, write their questions down too; those become the tutorial's opening. Suggest it once per build.
 
 ## Rules
 
